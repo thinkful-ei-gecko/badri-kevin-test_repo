@@ -99,3 +99,52 @@ console.log(daysInMonth('not a month'));
 console.log(daysInMonth('April'));
 */
 
+function playRockPaperScissors(num) {
+    let result = '';
+
+    if (typeof num !== 'number' && (num < 1 || num > 3)) {
+        throw new Error('errorrrrrr');
+    }
+
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+
+    switch(randomNo) {
+        case 1:
+            if (num === 1) {
+                result = "TIE!";
+            }
+            else if (num === 2) {
+                result = "Player Wins: Paper beats Rock";
+            }
+            else if (num === 3) {
+                result = "Player Loses: Rock beats Scissors";
+            }
+            break;
+        case 2:
+                if (num === 1) {
+                    result = "Player Loses: Paper beats Rock";
+                }
+                else if (num === 2) {
+                    result = "TIE!";
+                }
+                else if (num === 3) {
+                    result = "Player Wins: Scissors beats Paper";
+                }
+            break;
+        case 3:
+                if (num === 1) {
+                    result = "Player Wins: Rock beats Scissors";
+                }
+                else if (num === 2) {
+                    result = "Player Loses: Scissors beats Paper";
+                }
+                else if (num === 3) {
+                    result = "TIE!";
+                }
+            break;
+    }
+    return result;
+}
+
+let x = 3;
+console.log(playRockPaperScissors(x));
