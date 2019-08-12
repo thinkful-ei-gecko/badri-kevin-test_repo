@@ -6,6 +6,10 @@ function createGreeting(name, age) {
   if (typeof name === 'undefined' || typeof age === 'undefined') {
     throw new Error('Arguments not valid.');
   }
+  if (age < 0) {
+    throw new Error ('Age cannot be negative');
+  }
+
   if (typeof name !== 'string' || typeof age !== 'number'){
     throw new TypeError();
   }
@@ -15,10 +19,7 @@ function createGreeting(name, age) {
 }
 
 function getYearOfBirth(age){
-  if (age < 0) {
-    throw new Error ('Age cannot be negative');
-  }
-
+  
   return 2019 - age;
 }
 
@@ -27,6 +28,6 @@ try {
   console.log(greeting1);
 } 
 catch (e){
-  console.error(e);
+  console.error(e.message);
 }
 
