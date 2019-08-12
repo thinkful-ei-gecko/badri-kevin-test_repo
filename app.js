@@ -3,7 +3,9 @@ let myTeam = 'Badri and Kevin';
 console.log(myTeam);
 
 function createGreeting() {
-    console.log("Hi, my name is Badri and I'm 25 years old.");
+    // eslint-disable-next-line quotes
+    return "Hi, my name is Badri and I'm 25 years old.";
 }
 
-createGreeting();
+const greeting1 = createGreeting();
+console.log(greeting1);
