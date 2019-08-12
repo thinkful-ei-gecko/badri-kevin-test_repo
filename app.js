@@ -19,7 +19,7 @@ try {
   const greeting1 = createGreeting('Badri', 25);
 } 
 catch (e){
-  console.log(e);
+  console.error(e);
 }
 
 const greeting1 = createGreeting('Badri', 25);
