@@ -2,4 +2,8 @@
 let myTeam = 'Badri and Kevin';
 console.log(myTeam);
 
-console.log("Hi, my name is Badri and I'm 25 years old.");
+function createGreeting() {
+    console.log("Hi, my name is Badri and I'm 25 years old.");
+}
+
+createGreeting();
