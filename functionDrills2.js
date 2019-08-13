@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 'use strict';
 
 function jediName(firstName, lastName) {
@@ -61,31 +63,32 @@ function decode (message) {
 function daysInMonth(month, leapYear){
   let result;
   switch(month) {
-  case 'January':
-  case 'March':
-  case 'May':
-  case 'July':
-  case 'August':
-  case 'October':
-  case 'December':
-    result = `${month} has 31 days`;
-    break;
-  case 'April':
-  case 'June':
-  case 'September':
-  case 'November':
-    result = `${month} has 30 days`;
-    break;
-  case 'February':{
-    if (leapYear) {
-      result = 'February has 29 days';
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      result = `${month} has 31 days`;
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      result = `${month} has 30 days`;
+      break;
+    case 'February':{
+      if (leapYear) {
+        result = 'February has 29 days';
+      }
+      else {   
+        result = 'February has 28 days';
+      }
+      break;
     }
-    else {   
-      result = 'February has 28 days';
-    }
-    break;
-  }
-  default: throw new Error('Must provide a valid month');
+    default: 
+      throw new Error('Must provide a valid month');
   }
   return result;
 }
@@ -100,50 +103,50 @@ console.log(daysInMonth('April'));
 */
 
 function playRockPaperScissors(num) {
-    let result = '';
+  let result = '';
 
-    if (typeof num !== 'number' && (num < 1 || num > 3)) {
-        throw new Error('errorrrrrr');
-    }
+  if (typeof num !== 'number' && (num < 1 || num > 3)) {
+    throw new Error('errorrrrrr');
+  }
 
-    const randomNo = Math.floor(Math.random() * 3) + 1;
+  const randomNo = Math.floor(Math.random() * 3) + 1;
 
-    switch(randomNo) {
-        case 1:
-            if (num === 1) {
-                result = "TIE!";
-            }
-            else if (num === 2) {
-                result = "Player Wins: Paper beats Rock";
-            }
-            else if (num === 3) {
-                result = "Player Loses: Rock beats Scissors";
-            }
-            break;
-        case 2:
-                if (num === 1) {
-                    result = "Player Loses: Paper beats Rock";
-                }
-                else if (num === 2) {
-                    result = "TIE!";
-                }
-                else if (num === 3) {
-                    result = "Player Wins: Scissors beats Paper";
-                }
-            break;
-        case 3:
-                if (num === 1) {
-                    result = "Player Wins: Rock beats Scissors";
-                }
-                else if (num === 2) {
-                    result = "Player Loses: Scissors beats Paper";
-                }
-                else if (num === 3) {
-                    result = "TIE!";
-                }
-            break;
-    }
-    return result;
+  switch(randomNo) {
+    case 1:
+      if (num === 1) {
+        result = 'TIE!';
+      }
+      else if (num === 2) {
+        result = 'Player Wins: Paper beats Rock';
+      }
+      else if (num === 3) {
+        result = 'Player Loses: Rock beats Scissors';
+      }
+      break;
+    case 2:
+      if (num === 1) {
+        result = 'Player Loses: Paper beats Rock';
+      }
+      else if (num === 2) {
+        result = 'TIE!';
+      }
+      else if (num === 3) {
+        result = 'Player Wins: Scissors beats Paper';
+      }
+      break;
+    case 3:
+      if (num === 1) {
+        result = 'Player Wins: Rock beats Scissors';
+      }
+      else if (num === 2) {
+        result = 'Player Loses: Scissors beats Paper';
+      }
+      else if (num === 3) {
+        result = 'TIE!';
+      }
+      break;
+  }
+  return result;
 }
 
 let x = 3;
